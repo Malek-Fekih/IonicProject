@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/stations"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="microphone"></ion-icon> {{station?.name}}
+    </ion-title>
+    <ion-button slot="end" name="star">
+      <ion-button (click)="unfavourite()" *ngIf="isFavorite">
+        <ion-icon name="star" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="favoriteStation()" *ngIf="!isFavorite">
+        <ion-icon name="star-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+
+      <ion-card-title>{{station?.name}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>URL:
+      {{station?.url}}
+      <br>
+      Home Page: {{station?.homepage}}<br>
+      Country: {{station?.country}}<br>
+      Tags: {{station?.tags}}
+      <br>
+      Language: {{station?.language}}<br>
+      Votes: {{station?.votes}}<br>
+      Negative Votes: {{station?.negativevotes}}
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/countries"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="radio"></ion-icon> {{country}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item button detail *ngFor="let station of stations " (click)=getStationDetails(station)
+    routerLink="/station-details">
+    {{station.name}}
+  </ion-item>
+</ion-content>

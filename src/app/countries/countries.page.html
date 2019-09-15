@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-icon name="globe"></ion-icon> Countries
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item button detail *ngFor="let country of countries " (click)=getCountryName(country) routerLink="/stations">
+      {{country.name}}
+    </ion-item>
+  </ion-list>
+</ion-content>
